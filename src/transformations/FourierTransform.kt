@@ -81,7 +81,7 @@ class FourierTransform(var func:(Double)->(Double)): CustomPlot {
     }
 
 
-    fun transform(points:ArrayList<Double>, mult:Double = 1.0, negative:Boolean = false): ArrayList<Complex> {
+    fun transform(points:ArrayList<Double>, mult:Number = 1, negative:Boolean = false): ArrayList<Complex> {
 
         var samples:ArrayList<Complex> = ArrayList()
 

@@ -7,9 +7,9 @@ class Complex {
     var r:Double
     var j:Double
 
-    constructor(r:Double=0.0, j:Double=0.0){
-        this.r = r
-        this.j = j
+    constructor(r:Number=0.0, j:Number=0.0){
+        this.r = r.toDouble()
+        this.j = j.toDouble()
     }
 
     constructor(phase:Angle, mag:Number){
