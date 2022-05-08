@@ -41,6 +41,14 @@ class Grid(var xs: Int, var ys: Int, xp:Double = .2, yp:Double = .8) {
         }
     }
 
+    val show_reset: Unit
+        get() {
+            show
+            reset
+            println()
+            println()
+        }
+
     val show: Unit
         get() {
             for(i:ArrayList<String> in grid){

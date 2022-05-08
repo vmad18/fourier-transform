@@ -2,7 +2,7 @@ import utils.*
 import kotlin.math.max
 import kotlin.math.pow
 
-class Spline: CustomFunction {
+class Spline: CustomPlot {
 
     private var points: ArrayList<Point2D> = ArrayList()
 

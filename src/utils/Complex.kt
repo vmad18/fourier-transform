@@ -23,13 +23,6 @@ class Complex {
         this.j = (c*re).j
     }
 
-    /*
-     *
-     *(a+bj(c+dj)
-     * ac-bd + adj + cbj
-     *
-     */
-
     operator fun times(c:Complex): Complex = Complex(this.r * c.r - this.j * c.j, this.r * c.j + c.r * this.j)
 
     operator fun times(s:Number): Complex = Complex(this.r * s.toDouble(), this.j * s.toDouble())
@@ -37,6 +30,14 @@ class Complex {
     operator fun plus(c:Complex): Complex = Complex(this.r + c.r, this.j + c.j)
 
     operator fun div(s:Number): Complex = Complex(this.r/s.toDouble(), this.j/s.toDouble())
+
+    fun get_part(part:Part): Double{
+        return when(part){
+            Part.REAL -> this.r
+            Part.IMG -> this.j
+            Part.MAG -> this.mag
+        }
+    }
 
     val mag:Double
         get() = sqrt(r.square + j.square)
@@ -47,5 +48,11 @@ class Complex {
     val to_string:String
         get() = "${round(r*1e4)/1e4}+${round(j*1e4)/1e4}j"
 
+}
 
+
+enum class Part{
+    REAL,
+    IMG,
+    MAG
 }
